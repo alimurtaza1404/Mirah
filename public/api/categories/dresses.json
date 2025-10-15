@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Champagne Draped Dress",
+    "price": "$420",
+    "image": "/pic1.JPG",
+    "handle": "champagne-draped-dress"
+  },
+  {
+    "id": 2,
+    "title": "Emerald Satin Dress",
+    "price": "$460",
+    "image": "/pic2.JPG",
+    "handle": "emerald-satin-dress"
+  },
+  {
+    "id": 3,
+    "title": "Ivory Silk Dress",
+    "price": "$480",
+    "image": "/pic3.JPG",
+    "handle": "ivory-silk-dress"
+  }
+]
