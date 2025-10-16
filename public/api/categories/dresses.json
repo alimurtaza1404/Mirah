@@ -1,23 +1,38 @@
 [
   {
-    "id": 1,
-    "title": "Champagne Draped Dress",
-    "price": "$420",
-    "image": "/pic1.JPG",
-    "handle": "champagne-draped-dress"
-  },
-  {
-    "id": 2,
-    "title": "Emerald Satin Dress",
-    "price": "$460",
-    "image": "/pic2.JPG",
-    "handle": "emerald-satin-dress"
-  },
-  {
-    "id": 3,
-    "title": "Ivory Silk Dress",
-    "price": "$480",
-    "image": "/pic3.JPG",
-    "handle": "ivory-silk-dress"
+    "id": "dress-001",
+    "title": "Elegant Evening Dress",
+    "handle": "elegant-evening-dress",
+    "image": "/pic4.JPG",
+    "price": "$299",
+    "category": "Dresses",
+    "availability": true,
+    "rating": 4.8,
+    "reviews": 127,
+    "description": "Crafted from premium silk chiffon, this elegant evening dress features a flattering A-line silhouette with delicate lace detailing. Perfect for special occasions and evening events.",
+    "material": "100% Silk Chiffon",
+    "care": "Dry Clean Only",
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "images": [
+      "/pic1.JPG",
+      "/pic2.JPG",
+      "/pic3.JPG",
+      "/pic4.JPG"
+    ],
+    "relatedProducts": [
+      {
+        "id": "dress-002",
+        "title": "Floral Maxi Dress",
+        "image": "/pic2.JPG",
+        "price": "$249"
+      },
+      {
+        "id": "dress-003",
+        "title": "Satin Slip Dress",
+        "image": "/pic3.JPG",
+        "price": "$189"
+      }
+    ]
   }
+
 ]
