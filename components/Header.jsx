@@ -222,6 +222,14 @@ export default function Header() {
             <circle cx="9" cy="20" r="1" />
             <circle cx="18" cy="20" r="1" />
           </svg>
+
+          {/* Admin Button */}
+          <Link
+            href="/login"
+            className="text-sm uppercase bg-[#c6b197] text-white px-4 py-2 rounded-full hover:bg-[#b79d82] transition hidden sm:block"
+          >
+            Admin
+          </Link>
         </div>
       </div>
 
@@ -283,6 +291,7 @@ export default function Header() {
               {t.language}
             </button>
             <Link href="/account" className="uppercase hover:text-[#c6b197]">{t.account}</Link>
+            <Link href="/login" className="uppercase hover:text-[#c6b197] mt-2">Admin</Link>
           </nav>
         </div>
       )}
