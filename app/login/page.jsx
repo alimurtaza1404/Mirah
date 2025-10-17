@@ -30,17 +30,31 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+    <div className="relative min-h-screen flex items-center justify-center bg-gray-100 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/pic1.JPG"
+          alt="Fashion Background"
+          className="w-full h-full object-cover opacity-60 blur-sm"
+        />
+        <div className="absolute inset-0 bg-black/20"></div>
+      </div>
+
       {/* Card Container */}
-      <div className="flex flex-col lg:flex-row w-full max-w-6xl rounded-3xl shadow-2xl overflow-hidden">
-        {/* Left Side Image */}
-        <div className="hidden lg:block lg:w-1/2 relative rounded-l-3xl overflow-hidden m-4">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="relative z-10 flex flex-col lg:flex-row w-full max-w-5xl bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-10"
+      >
+        {/* Left Side Image (Visible on large screens) */}
+        <div className="hidden lg:block lg:w-1/2 rounded-2xl overflow-hidden">
           <img
             src="/pic2.JPG"
-            alt="Fashion Background"
-            className="w-full h-full object-cover"
+            alt="Fashion Side"
+            className="w-full h-full object-cover transform hover:scale-105 transition duration-700"
           />
-          <div className="absolute inset-0 bg-black/25"></div>
         </div>
 
         {/* Right Side Form */}
@@ -48,7 +62,7 @@ export default function LoginPage() {
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="flex w-full lg:w-1/2 justify-center items-center bg-white/70 backdrop-blur-md rounded-r-3xl p-10 m-4"
+          className="flex w-full lg:w-1/2 justify-center items-center p-6 sm:p-10"
         >
           <div className="w-full max-w-md">
             <motion.h1
@@ -75,7 +89,10 @@ export default function LoginPage() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -94,7 +111,10 @@ export default function LoginPage() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Password
                 </label>
                 <input
@@ -143,7 +163,7 @@ export default function LoginPage() {
             </motion.p>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 }
