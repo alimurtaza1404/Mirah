@@ -233,67 +233,188 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ===== Mobile Menu ===== */}
-      {isMobileMenuOpen && (
-        <div className="sm:hidden bg-white border-t border-gray-200 shadow-md px-4 py-4">
-          <nav className="flex flex-col space-y-3 text-sm">
-            <Link href="/" className="uppercase hover:text-[#c6b197]">{t.home}</Link>
-            <details>
-              <summary className="uppercase cursor-pointer hover:text-[#c6b197]">{t.shop}</summary>
-              <div className={`pl-4 mt-2 space-y-1 ${isRTL ? 'pr-4' : 'pl-4'}`}>
-                <details>
-                  <summary className="cursor-pointer hover:text-[#c6b197]">{t.byCategory}</summary>
-                  <div className={`pl-4 mt-1 space-y-1 ${isRTL ? 'pr-4' : 'pl-4'}`}>
-                    {t.categories.map((item) => (
-                      <Link
-                        key={item}
-                        href={`/shop/category/${item.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`}
-                        className="block hover:text-[#c6b197]"
-                      >
-                        {item}
-                      </Link>
-                    ))}
-                  </div>
-                </details>
-                <details>
-                  <summary className="cursor-pointer hover:text-[#c6b197]">{t.byCollection}</summary>
-                  <div className={`pl-4 mt-1 space-y-1 ${isRTL ? 'pr-4' : 'pl-4'}`}>
-                    {t.collections.map((item) => (
-                      <Link
-                        key={item}
-                        href={`/shop/collection/${item.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`}
-                        className="block hover:text-[#c6b197]"
-                      >
-                        {item}
-                      </Link>
-                    ))}
-                  </div>
-                </details>
-              </div>
-            </details>
+{/* ===== Mobile Menu (Left Drawer Style) ===== */}
+{isMobileMenuOpen && (
+  <div className="sm:hidden fixed inset-0 z-50 flex">
+    {/* Left Drawer */}
+    <div className="w-[70%] bg-white h-full shadow-xl p-5 overflow-y-auto">
+      {/* Close Button */}
+      <button
+        onClick={() => setIsMobileMenuOpen(false)}
+        className="text-black text-2xl mb-4"
+      >
+        ×
+      </button>
 
+      {/* Cart Box */}
+      <div className="border border-black px-3 py-2 flex justify-between items-center text-sm mb-4">
+        <span>CART (0)</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 4.707a1 1 0 00.948 1.293H19M7 13L5.4 5M16 17a2 2 0 11-4 0m6 0a2 2 0 11-4 0"
+          />
+        </svg>
+      </div>
+
+      {/* Navigation */}
+      <nav className="flex flex-col text-sm text-gray-800">
+        {/* Home */}
+        <Link
+          href="/"
+          className="py-3 border-t border-gray-300 uppercase hover:text-[#c6b197]"
+        >
+          {t.home}
+        </Link>
+
+        {/* Shop Dropdown */}
+        <details className="border-t border-gray-300">
+          <summary className="py-3 uppercase cursor-pointer hover:text-[#c6b197] flex justify-between items-center">
+            {t.shop}
+            <span className="text-lg">▾</span>
+          </summary>
+          <div className={`pl-4 pb-2 space-y-1 ${isRTL ? 'pr-4' : 'pl-4'}`}>
             <details>
-              <summary className="uppercase cursor-pointer hover:text-[#c6b197]">{t.about}</summary>
-              <div className={`pl-4 mt-2 space-y-1 ${isRTL ? 'pr-4' : 'pl-4'}`}>
-                {t.aboutLinks.map((link) => (
-                  <Link key={link.name} href={link.href} className="block hover:text-[#c6b197]">
-                    {link.name}
+              <summary className="cursor-pointer hover:text-[#c6b197] py-1">
+                {t.byCategory}
+              </summary>
+              <div className={`pl-4 mt-1 space-y-1 ${isRTL ? 'pr-4' : 'pl-4'}`}>
+                {t.categories.map((item) => (
+                  <Link
+                    key={item}
+                    href={`/shop/category/${item
+                      .toLowerCase()
+                      .replace(/ & /g, '-')
+                      .replace(/\s+/g, '-')}`}
+                    className="block hover:text-[#c6b197] py-0.5"
+                  >
+                    {item}
                   </Link>
                 ))}
               </div>
             </details>
+            <details>
+              <summary className="cursor-pointer hover:text-[#c6b197] py-1">
+                {t.byCollection}
+              </summary>
+              <div className={`pl-4 mt-1 space-y-1 ${isRTL ? 'pr-4' : 'pl-4'}`}>
+                {t.collections.map((item) => (
+                  <Link
+                    key={item}
+                    href={`/shop/collection/${item
+                      .toLowerCase()
+                      .replace(/ & /g, '-')
+                      .replace(/\s+/g, '-')}`}
+                    className="block hover:text-[#c6b197] py-0.5"
+                  >
+                    {item}
+                  </Link>
+                ))}
+              </div>
+            </details>
+          </div>
+        </details>
 
-            <Link href="/contact" className="uppercase hover:text-[#c6b197]">{t.contact}</Link>
-            <button
-              onClick={handleLanguageToggle}
-              className="uppercase hover:text-[#c6b197] text-left"
-            >
-              {t.language}
-            </button>
-            <Link href="/account" className="uppercase hover:text-[#c6b197]">{t.account}</Link>
-            <Link href="/login" className="uppercase hover:text-[#c6b197] mt-2">Admin</Link>
-          </nav>
+        {/* About Dropdown */}
+        <details className="border-t border-gray-300">
+          <summary className="py-3 uppercase cursor-pointer hover:text-[#c6b197] flex justify-between items-center">
+            {t.about}
+            <span className="text-lg">▾</span>
+          </summary>
+          <div className={`pl-4 pb-2 space-y-1 ${isRTL ? 'pr-4' : 'pl-4'}`}>
+            {t.aboutLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="block hover:text-[#c6b197] py-0.5"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </details>
+
+        {/* Contact */}
+        <Link
+          href="/contact"
+          className="py-3 border-t border-gray-300 uppercase hover:text-[#c6b197]"
+        >
+          {t.contact}
+        </Link>
+
+        {/* Language */}
+        <button
+          onClick={handleLanguageToggle}
+          className="py-3 border-t border-gray-300 uppercase text-left hover:text-[#c6b197]"
+        >
+          {t.language}
+        </button>
+
+        {/* Login / Account */}
+        <Link
+          href="/account"
+          className="py-3 border-t border-gray-300 uppercase hover:text-[#c6b197] flex items-center gap-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0zM4 21a8 8 0 1116 0H4z"
+            />
+          </svg>
+          {t.account}
+        </Link>
+
+        {/* Search */}
+        <div className="py-3 border-t border-b border-gray-300 uppercase hover:text-[#c6b197]">
+          Search
         </div>
+      </nav>
+
+      {/* Reward Button */}
+      <div className="fixed bottom-5 left-5">
+        <button className="bg-[#d7c1a0] text-white text-sm px-4 py-2 rounded-md shadow-md flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              d="M12 8V4m0 0L8 8m4-4l4 4M4 12h16m-9 4v4m0 0l-4-4m4 4l4-4"
+            />
+          </svg>
+          Reward
+        </button>
+      </div>
+    </div>
+
+    {/* Transparent right overlay to click and close */}
+    <div
+      onClick={() => setIsMobileMenuOpen(false)}
+      className="flex-1 bg-black bg-opacity-30 backdrop-blur-sm"
+    ></div>
+  </div>
+
       )}
     </header>
   );
