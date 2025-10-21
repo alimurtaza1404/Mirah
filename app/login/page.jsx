@@ -30,7 +30,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gray-100 overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center bg-gray-100 overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -46,9 +46,9 @@ export default function LoginPage() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="relative z-10 flex flex-col lg:flex-row w-full max-w-5xl bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-10"
+        className="relative z-10 flex flex-col lg:flex-row w-full max-w-6xl bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden p-4 sm:p-8 md:p-10"
       >
-        {/* Left Side Image (Visible on large screens) */}
+        {/* Left Side Image */}
         <div className="hidden lg:block lg:w-1/2 rounded-2xl overflow-hidden">
           <img
             src="/pic2.JPG"
@@ -62,14 +62,14 @@ export default function LoginPage() {
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="flex w-full lg:w-1/2 justify-center items-center p-6 sm:p-10"
+          className="flex w-full lg:w-1/2 justify-center items-center py-10 sm:py-12 px-4 sm:px-8"
         >
-          <div className="w-full max-w-md">
+          <div className="w-full max-w-md space-y-6 sm:space-y-8">
             <motion.h1
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl font-bold text-[#c6b197] text-center mb-6"
+              className="text-3xl sm:text-4xl font-bold text-[#c6b197] text-center"
             >
               Mirah Dashboard
             </motion.h1>
@@ -78,12 +78,13 @@ export default function LoginPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-gray-700 text-center mb-8"
+              className="text-gray-700 text-center text-sm sm:text-base"
             >
               Sign in to manage your collections
             </motion.p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+              {/* Email */}
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -102,10 +103,11 @@ export default function LoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@mirah.com"
                   required
-                  className="w-full px-5 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#c6b197] focus:outline-none transition"
+                  className="w-full px-4 sm:px-5 py-3 border border-gray-300 rounded-2xl text-sm sm:text-base focus:ring-2 focus:ring-[#c6b197] focus:outline-none transition"
                 />
               </motion.div>
 
+              {/* Password */}
               <motion.div
                 initial={{ x: 50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -124,10 +126,11 @@ export default function LoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="mirah123"
                   required
-                  className="w-full px-5 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#c6b197] focus:outline-none transition"
+                  className="w-full px-4 sm:px-5 py-3 border border-gray-300 rounded-2xl text-sm sm:text-base focus:ring-2 focus:ring-[#c6b197] focus:outline-none transition"
                 />
               </motion.div>
 
+              {/* Error */}
               {error && (
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -139,18 +142,20 @@ export default function LoginPage() {
                 </motion.p>
               )}
 
+              {/* Submit */}
               <motion.button
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.7 }}
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 bg-gradient-to-r from-[#c6b197] to-[#b79d82] text-white font-medium rounded-2xl hover:from-[#b79d82] hover:to-[#c6b197] transition-all duration-300 disabled:opacity-50"
+                className="w-full py-3 bg-gradient-to-r from-[#c6b197] to-[#b79d82] text-white font-medium rounded-2xl hover:from-[#b79d82] hover:to-[#c6b197] transition-all duration-300 disabled:opacity-50 text-sm sm:text-base"
               >
                 {loading ? 'Signing In...' : 'Sign In'}
               </motion.button>
             </form>
 
+            {/* Forgot Password */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

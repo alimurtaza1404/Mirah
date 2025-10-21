@@ -37,20 +37,19 @@ export default function AboutSection() {
           About the Brand
         </h2>
 
-        <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-10">
-          Designing for the moving eye, as we believe everything is an art —
-          representing not only the outward appearance of things but their inner
-          significance.
-          <br /><br />
-          The brand is devoted to creating a wardrobe full of haute and stunning
-          pieces that stand out and make an impression. <span className="font-semibold text-gray-900">Mirah</span> is all about
-          creating visually captivating art for women. Enlivened by the imperfect
-          nature around us and delving into the fine details, <span className="font-semibold text-gray-900">Mirah</span> is
-          emboldened by women — the essence of its name.
-          <br /><br />
-          <span className="font-semibold text-gray-900">Mirah’s</span> aesthetic is like no other — creating timeless pieces
-          that turn heads and redefine elegance.
-        </p>
+<p className="text-base md:text-lg text-gray-700 leading-relaxed mb-10">
+  Born from a love of refined simplicity, <span className="font-semibold text-gray-900">Mirah</span> celebrates women who
+  find beauty in understated elegance. Our collections embody a harmonious blend of modern sophistication, timeless
+  silhouettes, and minimalist details that reflect effortless grace.
+  <br /><br />
+  Each piece is thoughtfully designed to embrace modesty while celebrating contemporary style. Guided by integrity,
+  craftsmanship, and purpose, <span className="font-semibold text-gray-900">Mirah</span> is committed to creating garments
+  that honor individuality and empower women to express their true selves with confidence.
+  <br /><br />
+  At <span className="font-semibold text-gray-900">Mirah</span>, fashion is not merely about appearance — it is an art form,
+  a language of authenticity and quiet strength that redefines what it means to be truly elegant.
+</p>
+
 
         {/* Image Grid */}
         <motion.div
