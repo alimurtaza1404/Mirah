@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 export default function CollectionSection() {
   const items = [
-    { title: 'Spring Collection', image: '/pic4.JPG' },
-    { title: 'Fall & Winter', image: '/pic2.JPG' },
-    { title: 'Bridal & Evening', image: '/pic3.JPG' },
+    { title: 'Spring Collection', image: '/images/1/2J3A0408.jpg' },
+    { title: 'Fall & Winter', image: '/images/12/2J3A0754.jpg' },
+    { title: 'Bridal & Evening', image: '/images/14/2J3A0821.jpg' },
   ];
 
   return (

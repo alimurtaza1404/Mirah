@@ -27,13 +27,12 @@ export default function Header() {
         'Mini', 'Bridal & Wedding', 'Accessories', 'Shoes', 'Ready To Wear', 'Sale'
       ],
       collections: [
-        'Bridal & Evening 25', 'Spring & Summer 25', 'Eid 25', 'Ramadan & Eid 25',
-        'Fall & Winter 24', 'Bridal & Evening 24', 'Spring & Summer 24', 'Eid 24', 'Ramadan & Eid 24'
+        'Bridal & Evening 25'
       ],
       aboutLinks: [
         { name: 'The Brand', href: '/about/thebrand' },
-        { name: 'Showroom', href: '/about/showroom' },
-        { name: 'Stocklist', href: '/about/stocklist' },
+        // { name: 'Showroom', href: '/about/showroom' },
+        // { name: 'Stocklist', href: '/about/stocklist' },
         { name: 'Press', href: '/about/press' }
       ]
     },
@@ -52,13 +51,12 @@ export default function Header() {
         'ميني', 'زفاف وعرائس', 'إكسسوارات', 'أحذية', 'جاهز للارتداء', 'تخفيضات'
       ],
       collections: [
-        'زفاف ومساء 25', 'ربيع وصيف 25', 'عيد 25', 'رمضان وعيد 25',
-        'خريف وشتاء 24', 'زفاف ومساء 24', 'ربيع وصيف 24', 'عيد 24', 'رمضان وعيد 24'
+        'زفاف ومساء 25'
       ],
       aboutLinks: [
         { name: 'العلامة التجارية', href: '/about/thebrand' },
-        { name: 'صالة العرض', href: '/about/showroom' },
-        { name: 'قائمة المخزون', href: '/about/stocklist' },
+        // { name: 'صالة العرض', href: '/about/showroom' },
+        // { name: 'قائمة المخزون', href: '/about/stocklist' },
         { name: 'الصحافة', href: '/about/press' }
       ]
     }
@@ -381,7 +379,7 @@ export default function Header() {
       </div>
 
       {/* Reward Button (Now scrolls at bottom naturally) */}
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <button className="w-full bg-[#c6b197] text-white text-sm px-6 py-3 rounded-full shadow-md flex justify-center items-center gap-2 hover:bg-[#bba284] transition">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -399,7 +397,7 @@ export default function Header() {
           </svg>
           Reward
         </button>
-      </div>
+      </div> */}
     </div>
 
     {/* Right Overlay */}
