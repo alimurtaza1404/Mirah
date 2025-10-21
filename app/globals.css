@@ -120,12 +120,5 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   cursor: pointer;
 }
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
 
-.font-arabic {
-  font-family: 'Noto Sans Arabic', sans-serif;
-}
 
-.font-sans {
-  font-family: 'Your English Font', sans-serif; /* Replace with your English font */
-}
